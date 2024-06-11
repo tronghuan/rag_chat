@@ -1,0 +1,6 @@
+rag_chat/migrations
+rag_chat/__pycache__
+chat/migrations
+chat/__pycache__
+venv/
+.idea/
