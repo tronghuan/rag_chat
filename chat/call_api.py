@@ -11,7 +11,10 @@ def call_api():
     # Check if the request was successful
     if response.status_code == 200:
         # Parse the JSON response
-        data = response.json()
+        data = {
+            'key1': 'value1',
+            'key2': 'value2'
+        }
         return JsonResponse(data, safe=False)
     else:
         # Handle errors
