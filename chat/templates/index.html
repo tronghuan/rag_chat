@@ -3,6 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://d3306f6b8j1ugf.cloudfront.net/lex-web-ui-loader.min.js"></script>
+    <script>
+        var loaderOpts = {
+            baseUrl: 'https://d3306f6b8j1ugf.cloudfront.net/',
+            shouldLoadMinDeps: true
+        };
+        var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+        var chatbotUiConfig = {
+            "region": "ap-northeast-1",
+            "cognito": {
+                "poolId": "ap-northeast-1:62c7058a-1520-4bf0-a653-e4f2ceafaf4d",
+                "appUserPoolClientId": "7o8b0r5fvsk5nbhf89qcou0493",
+                "appUserPoolName": "ap-northeast-1_J6E8XXOp6",
+                "appDomainName": "lexkwebkuikidentitypoolconfigkaftvnlobyrpg551503056338.auth.ap-northeast-1.amazoncognito.com",
+                "aws_cognito_region": "ap-northeast-1",
+                "region": "ap-northeast-1"
+            },
+            "connect": {
+                "contactFlowId": "",
+                "instanceId": "",
+                "apiGatewayEndpoint": "",
+                "promptForNameMessage": "Before starting a live chat, please tell me your name?",
+                "waitingForAgentMessage": "Thanks for waiting. An agent will be with you when available.",
+                "waitingForAgentMessageIntervalSeconds": "60",
+                "agentJoinedMessage": "{Agent} has joined.",
+                "agentLeftMessage": "{Agent} has left.",
+                "chatEndedMessage": "Chat ended.",
+                "attachChatTranscript": "false",
+                "liveChatTerms": "live chat",
+                "transcriptMessageDelayInMsec": "150"
+            },
+            "lex": {
+                "v2BotId": "AQ2WKZ3HGV",
+                "v2BotAliasId": "TSTALIASID",
+                "v2BotLocaleId": "en_US",
+                "botName": "AQ2WKZ3HGV",
+                "botAlias": "$LATEST",
+                "initialText": "You can ask me for help ordering flowers. Just type \"Buy flowers\" or click on the mic and say it.",
+                "initialSpeechInstruction": "Say 'ticket' to get started.",
+                "initialUtterance": "",
+                "reInitSessionAttributesOnRestart": false,
+                "region": "ap-northeast-1",
+                "retryOnLexPostTextTimeout": "false",
+                "retryCountPostTextTimeout": "1",
+                "allowStreamingResponses": false,
+                "streamingWebSocketEndpoint": "",
+                "streamingDynamoDbTable": ""
+            },
+            "ui": {
+                "parentOrigin": "http://35.76.26.171:8000",
+                "toolbarTitle": "Order Ticket",
+                "toolbarLogo": "",
+                "toolbarStartLiveChatLabel": "Start Live Chat",
+                "toolbarEndLiveChatLabel": "End Live Chat",
+                "toolbarStartLiveChatIcon": "people_alt",
+                "toolbarEndLiveChatIcon": "call_end",
+                "positiveFeedbackIntent": "Thumbs up",
+                "negativeFeedbackIntent": "Thumbs down",
+                "helpIntent": "Help",
+                "minButtonContent": "",
+                "avatarImageUrl": "",
+                "backButton": false,
+                "messageMenu": false,
+                "hideButtonMessageBubble": false,
+                "enableLogin": false,
+                "enableLiveChat": false,
+                "forceLogin": false,
+                "enableUpload": false,
+                "uploadS3BucketName": "",
+                "AllowSuperDangerousHTMLInMessage": true,
+                "shouldDisplayResponseCardTitle": false,
+                "saveHistory": false,
+                "helpContent": {},
+                "enableSFX": false,
+                "hideInputFieldsForButtonResponse": false,
+                "pushInitialTextOnRestart": false,
+                "directFocusToBotInput": false,
+                "showDialogStateIcon": false
+            },
+            "polly": {
+                "voiceId": "Salli"
+            },
+            "recorder": {
+                "preset": "speech_recognition"
+            },
+            "iframe": {
+                "iframeOrigin": "https://d3306f6b8j1ugf.cloudfront.net",
+                "shouldLoadIframeMinimized": false,
+                "iframeSrcPath": "/index.html#/?lexWebUiEmbed=true"
+            }
+        };
+        loader.load(chatbotUiConfig)
+            .catch(function (error) {
+                console.error(error);
+            });
+    </script>
+
 </head>
 <body>
 <h1>Hello World!</h1>
