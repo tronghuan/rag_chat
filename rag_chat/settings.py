@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'rag_chat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tsdb',
+        'USER': 'tsdbadmin',
+        'PASSWORD': 'rkupkz663k4ji7je',
+        'HOST': 'rp1g36hc7l.ce8w9z2yab.tsdb.cloud.timescale.com',  # Set to your database host
+        'PORT': '34173',       # Default PostgreSQL port
     }
 }
 

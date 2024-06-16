@@ -4,3 +4,4 @@ chat/migrations
 chat/__pycache__
 venv/
 .idea/
+.env

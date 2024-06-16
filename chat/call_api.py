@@ -1,9 +1,10 @@
 import requests
 from django.http import JsonResponse
 import openai
+from decouple import config
 
 # Đặt API key của bạn tại đây
-openai.api_key = ''
+openai.api_key = config('OPENAI_API_KEY')
 
 
 def call_api():
