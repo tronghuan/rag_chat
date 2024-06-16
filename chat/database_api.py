@@ -1,5 +1,6 @@
 import psycopg2
 from django.conf import settings
+from decouple import config
 import boto3
 import json
 
@@ -76,7 +77,7 @@ def save_embeddings(table_name, embeddings, rows, columns):
         cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN aws_embedding TEXT")
     for i, embedding in enumerate(embeddings):
         cursor.execute(
-            f"UPDATE {table_name} SET embedding = %s WHERE id = %s",
+            f"UPDATE {table_name} SET aws_embedding = %s WHERE id = %s",
             (embedding, rows[i][0])
         )
     connection.commit()
@@ -87,8 +88,9 @@ def process_table(table_name):
     embeddings = embed_rows(rows)
     save_embeddings(table_name, embeddings, rows, columns)
 
-# List of tables you want to process
-tables_to_process = ['table1', 'table2', 'table3']
+def aws_embedding():
+    # List of tables you want to process
+    tables_to_process = config('LIST_TABLES')
 
-for table in tables_to_process:
-    process_table(table)
+    for table in tables_to_process:
+        process_table(table)

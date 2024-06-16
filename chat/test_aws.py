@@ -18,7 +18,7 @@ def create_embedding():
     #
     # )
 
-    bedrock_runtime = boto3.client(a
+    bedrock_runtime = boto3.client(
         service_name='bedrock-runtime',
         region_name='ap-northeast-1',
 

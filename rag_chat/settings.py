@@ -82,8 +82,15 @@ DATABASES = {
         'PASSWORD': 'rkupkz663k4ji7je',
         'HOST': 'rp1g36hc7l.ce8w9z2yab.tsdb.cloud.timescale.com',  # Set to your database host
         'PORT': '34173',       # Default PostgreSQL port
-    }
-}
+    },
+    'local':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tsdb',
+        'USER': 'tsdbadmin',
+        'PASSWORD': 'x3ssrc4ekkzzim9x',
+        'HOST': 'l8ks7ppahv.ce8w9z2yab.tsdb.cloud.timescale.com',  # Set to your database host
+        'PORT': '38813',       # Default PostgreSQL port
+    }}
 
 
 # Password validation

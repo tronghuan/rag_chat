@@ -7,6 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from .call_api import check_milk_name
 import json
 from django.views.decorators.csrf import csrf_exempt
+from .database_api import aws_embedding
 
 def index(request):
     data = {
@@ -27,3 +28,7 @@ def check(request):
         user_message = body.get('user_message', 'default_value')
         ai_response = check_milk_name(user_message)
         return JsonResponse({'ai_response': f'{ai_response}'})
+
+def aws_embedding(request):
+    aws_embedding()
+    return HttpResponse('Embedding AWS complete successfully')
